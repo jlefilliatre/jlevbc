@@ -23,14 +23,7 @@ angular.module('nibs.product', ['openfb', 'nibs.status', 'nibs.activity', 'nibs.
                     }
                 }
 
-                  .state('app.product-redeem', {
-                url: "/product/:productId/redeem",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/redeem2.html",
-                        controller: "ProductDetailCtrl"
-                    }
-                }
+           
             })
 
     })
@@ -102,12 +95,6 @@ angular.module('nibs.product', ['openfb', 'nibs.status', 'nibs.activity', 'nibs.
             });
         };
 
-           $scope.redeem = function () {
-            Activity.create({type: "Redeemed Offer", points: 1000, offerId: $scope.offer.sfid, name: $scope.offer.name, image: $scope.offer.image})
-                .success(function(status) {
-                    Status.checkStatus(status);
-                });
-            $state.go('app.product-redeem', {offerId: $scope.offer.id});
-        };
+          
 
     });
