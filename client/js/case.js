@@ -31,6 +31,12 @@ angular.module('nibs.case', [])
 
         $scope.case = {};
 
+        $scope.sos = function() {
+            var user = JSON.parse($window.localStorage.getItem('user'));
+            $window.location = 'sos://' + user.email;
+        };
+
+
         $scope.submit = function () {
             Case.create($scope.case).success(function() {
                 $ionicPopup.alert({title: 'Thank You', content: 'A customer representative will contact you shortly.'});
