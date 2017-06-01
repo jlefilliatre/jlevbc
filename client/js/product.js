@@ -23,14 +23,7 @@ angular.module('nibs.product', ['openfb', 'nibs.status', 'nibs.activity', 'nibs.
                     }
                 }
 
-                .state('app.product-redeem', {
-                url: "/product/:productId/redeem",
-                views: {
-                    'menuContent' :{
-                        templateUrl: "templates/redeem.html",
-                        controller: "ProductDetailCtrl"
-                    }
-                }
+                
             })
 
     })
